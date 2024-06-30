@@ -32,7 +32,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 input message: 'Do you want to apply the Terraform plan?', ok: 'Apply'
-                sh 'terraform apply plan.out'
+                sh 'terraform apply -auto-approve plan.out'
             }
         }
     }
